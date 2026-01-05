@@ -6,20 +6,18 @@
     <title>微遇美學 - 服務須知與導覽</title>
     <!-- 載入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 設定 Tailwind 配置，使用 Noto Serif TC (思源宋體) 作為主要字體 -->
+    <!-- 設定 Tailwind 配置 -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    // 新的配色方案 (顏色位置已交換)
                     colors: {
-                        'main-bg': '#cdbdb3',     // 主色 (新的淺土色)
-                        'main-text': '#5b6f5f',   // 文字顏色 (灰綠色，不變)
-                        'accent-taupe': '#f4f0e8', // 次要顏色 (新的淺米色)
-                        'line-green': '#00C300',   // LINE 綠色 (不變)
+                        'main-bg': '#cdbdb3',     // 主色 (淺土色)
+                        'main-text': '#5b6f5f',   // 文字顏色 (灰綠色)
+                        'accent-taupe': '#f4f0e8', // 次要顏色 (淺米色)
+                        'line-green': '#00C300',   // LINE 綠色
                     },
                     fontFamily: {
-                        // 將字體切換為 Noto Serif TC (思源宋體)，更具優雅質感
                         sans: ['Noto Serif TC', 'serif'],
                     },
                 }
@@ -27,25 +25,21 @@
         }
     </script>
     <style>
-        /* 確保 body 最小高度以使用 flex 居中，並使用新的主色作為背景 */
         body {
             min-height: 100vh;
-            background-color: '#cdbdb3'; /* 主色 (已更新) */
-            /* 設置 Noto Serif TC 為主要字體 */
+            background-color: #cdbdb3;
             font-family: 'Noto Serif TC', serif; 
         }
-        /* 自定義滾動條 (配合新色系) */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-thumb {
-            background-color: '#f4f0e8'; /* 次要顏色 (已更新) */
+            background-color: #f4f0e8;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-track {
-            background: '#cdbdb3'; /* 主色 (已更新) */
+            background: #cdbdb3;
         }
-        /* 確保內容展開時的平滑過渡 */
         .content-body {
             transition: max-height 0.5s ease-in-out, padding-bottom 0.5s ease-in-out;
         }
@@ -53,67 +47,85 @@
 </head>
 <body class="flex flex-col items-center p-4">
 
-    <!-- 主容器：背景顏色已從 bg-white 更改為 bg-main-bg (#cdbdb3) -->
+    <!-- 主容器 -->
     <div class="w-full max-w-md bg-main-bg rounded-2xl shadow-xl overflow-hidden mb-8">
 
-        <!-- 標題區塊, 社群連結, 與分頁按鈕 (使用 accent-taupe 作為背景) -->
+        <!-- 標題區塊與連結按鈕區 -->
         <header class="bg-accent-taupe p-6 text-main-text rounded-t-2xl shadow-lg">
             
-            <!-- 1. LOGO 圖片區塊 -->
-            <div class="flex justify-center mb-6">
-                <!-- 
-                    請將您的 LOGO 圖片網址 (URL) 貼在 src="" 內部的雙引號中。
-                    範例: src="您的_LOGO_圖片網址.png"
-                -->
+            <!-- LOGO 區塊 -->
+            <div class="flex justify-center mb-3">
                 <img 
-                    src="https://github.com/theweiyubeauty-eng/aesthetics-notes/blob/main/Logo.png" 
+                    src="https://raw.githubusercontent.com/theweiyubeauty-eng/aesthetics-notes/main/LOGO%E5%8E%BB%E8%83%8C.png" 
                     alt="微遇美學品牌標誌" 
-                    class="h-20 w-auto rounded-lg shadow-md"
-                    onerror="this.onerror=null; this.src='https://placehold.co/300x80/cdbdb3/5b6f5f?text=請+貼上+LOGO+網址'"
+                    class="h-56 w-auto mix-blend-multiply"
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x224/cdbdb3/5b6f5f?text=LOGO+Error'"
                 >
             </div>
             
-            <!-- 2. IG & LINE 按鈕 (邊框已移除，且樣式已統一) -->
-            <div class="flex justify-center space-x-4 mb-6">
-                <!-- Instagram Link -->
-                <!-- 按鈕背景使用 main-bg (現在是淺土色 #cdbdb3) -->
-                <a href="#" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-main-bg text-main-text rounded-full font-semibold shadow-md hover:bg-white transition duration-150">
-                    <span class="text-xl">📸</span>
+            <!-- 社交連結按鈕 - 已移除 LINE 諮詢 -->
+            <div class="flex justify-center space-x-2 mb-6">
+                <a href="https://www.instagram.com/theweiyu.beauty?igsh=MWs0cnVmNnJqbmF1bw%3D%3D&utm_source=qr" target="_blank" class="flex items-center space-x-1.5 px-3 py-1.5 bg-accent-taupe text-main-text rounded-full font-bold hover:bg-main-bg transition duration-150 text-sm" style="box-shadow: 0 4px 6px -1px rgba(205, 189, 179, 0.6), 0 2px 4px -2px rgba(205, 189, 179, 0.6);">
+                    <span class="text-lg">📸</span>
                     <span>Instagram</span>
                 </a>
-                <!-- LINE Link -->
-                <a href="#" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-main-bg text-main-text rounded-full font-semibold shadow-md hover:bg-white transition duration-150">
-                    <span class="text-xl">💬</span>
-                    <span>LINE 諮詢</span>
+                <a href="https://qli.tw/tYotcLM" target="_blank" class="flex items-center space-x-1.5 px-3 py-1.5 bg-accent-taupe text-main-text rounded-full font-bold hover:bg-main-bg transition duration-150 text-sm" style="box-shadow: 0 4px 6px -1px rgba(205, 189, 179, 0.6), 0 2px 4px -2px rgba(205, 189, 179, 0.6);">
+                    <span class="text-lg">📅</span>
+                    <span>我要預約</span>
                 </a>
             </div>
 
-            <!-- 3. 四個分頁按鈕 (Tabs) -->
+            <!-- 分頁按鈕 -->
             <div id="tabs-container" class="grid grid-cols-4 gap-2 text-center">
-                <!-- 預約必看 (預設選中/Active 狀態: 使用 main-bg [淺土色]) -->
                 <button data-tab="must-read" class="tab-btn p-2 text-sm font-bold rounded-lg bg-main-bg text-main-text shadow-inner transition duration-150 hover:bg-white">
                     預約必看
                 </button>
-                <!-- 睫毛管理 (非活動狀態: 使用 accent-taupe/80 [淺米色], text-main-text [灰綠色]) -->
+                <button data-tab="lip-blush" class="tab-btn p-2 text-sm font-semibold rounded-lg bg-accent-taupe/80 text-main-text shadow transition duration-150 hover:bg-accent-taupe">
+                    粉嫩唇
+                </button>
                 <button data-tab="lash-care" class="tab-btn p-2 text-sm font-semibold rounded-lg bg-accent-taupe/80 text-main-text shadow transition duration-150 hover:bg-accent-taupe">
                     睫毛管理
                 </button>
-                <!-- 水光粉嫩唇 (非活動狀態: 使用 accent-taupe/80 [淺米色], text-main-text [灰綠色]) -->
-                <button data-tab="lip-blush" class="tab-btn p-2 text-sm font-semibold rounded-lg bg-accent-taupe/80 text-main-text shadow transition duration-150 hover:bg-accent-taupe">
-                    水光粉嫩唇
-                </button>
-                <!-- 其他服務 (非活動狀態: 使用 accent-taupe/80 [淺米色], text-main-text [灰綠色]) -->
-                <button data-tab="other" class="tab-btn p-2 text-sm font-semibold rounded-lg bg-accent-taupe/80 text-main-text shadow transition duration-150 hover:bg-accent-taupe">
-                    其他服務
+                <button data-tab="beauty24h" class="tab-btn p-2 text-sm font-semibold rounded-lg bg-accent-taupe/80 text-main-text shadow transition duration-150 hover:bg-accent-taupe whitespace-nowrap">
+                    獺榻工作室
                 </button>
             </div>
 
         </header>
 
-        <!-- 注意事項清單 (Accordion Style) - 現在背景色會是 #cdbdb3 -->
+        <!-- 注意事項清單 -->
         <main id="notes-list" class="divide-y divide-main-bg p-4">
-            <!-- 數據會由 JavaScript 動態生成 -->
+            <!-- 數據由 JavaScript 生成 -->
         </main>
+        
+        <!-- 獺榻工作室 連結區塊 -->
+        <div id="beauty24h-links" class="p-4 hidden">
+            <div class="bg-accent-taupe p-4 rounded-xl mb-6 text-center shadow-inner border border-main-bg">
+                <h3 class="text-lg font-bold text-main-text mb-2 border-b-2 border-main-bg/30 pb-2">獺榻工作室 時租床位</h3>
+                <p class="text-sm text-main-text/90 mb-3">彈性時段、獨立空間，讓您輕鬆開展個人美業事業。</p>
+                <p class="text-sm text-main-text font-semibold mb-3">
+                    地址: 台中市一中街160-20-2F
+                    <a href="https://share.google/a7l8u9AKALND9uRtG" target="_blank" class="inline-flex items-center space-x-1 ml-2 px-3 py-1 text-xs font-bold rounded-full text-white bg-main-text hover:bg-main-text/80 transition duration-150 shadow-md">
+                        <span>點我導航</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </p>
+                <p class="text-sm text-main-text/70 mt-2 border-t border-main-bg/30 pt-2">詳細租賃資訊/參觀，請透過下方管道聯繫:</p>
+            </div>
+
+            <div class="space-y-4 pt-2">
+                <a href="https://www.instagram.com/theweiyu.beauty?igsh=MWs0cnVmNnJqbmF1bw%3D%3D&utm_source=qr" target="_blank" class="flex items-center justify-center space-x-3 p-4 bg-accent-taupe text-main-text rounded-xl font-bold text-lg hover:bg-main-bg transition duration-150 border border-main-bg" style="box-shadow: 0 4px 6px -1px rgba(205, 189, 179, 0.6), 0 2px 4px -2px rgba(205, 189, 179, 0.6);">
+                    <span class="text-2xl">📸</span>
+                    <span>INSTAGRAM</span>
+                </a>
+                <a href="https://line.ee/zkTKwT3" target="_blank" class="flex items-center justify-center space-x-3 p-4 bg-accent-taupe text-main-text rounded-xl font-bold text-lg hover:bg-main-bg transition duration-150 border border-main-bg" style="box-shadow: 0 4px 6px -1px rgba(205, 189, 179, 0.6), 0 2px 4px -2px rgba(205, 189, 179, 0.6);">
+                    <span class="text-2xl">💬</span>
+                    <span>LINE 諮詢</span>
+                </a>
+            </div>
+        </div>
 
         <!-- 底部聲明 -->
         <footer class="p-4 bg-main-bg text-center text-xs text-main-text rounded-b-2xl">
@@ -121,155 +133,118 @@
         </footer>
     </div>
 
-    <!-- JavaScript 邏輯 -->
     <script>
-        // 注意事項數據，加入了 category 欄位用於將來的分頁篩選
         const notesData = [
             {
+                title: "工作室地址",
+                icon: "→",
+                content: "地址: 台中市一中街160-20-2F <a href='https://share.google/a7l8u9AKALND9uRtG' target='_blank' class='inline-flex items-center space-x-1 px-2 py-0.5 text-xs font-bold rounded-full text-white bg-main-text hover:bg-main-text/80 transition duration-150 shadow-md'><span>點我導航</span><svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-3 w-3\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14\" /></svg></a>",
+                category: "must-read"
+            },
+            {
                 title: "預約注意事項", 
-                icon: "→", // EMOJI 替換為箭頭
-                content: "請務必準時到達。若遲到超過 15 分鐘，為不影響下一位客人，我們必須取消您的服務項目並不退還訂金。", 
-                category: "must-read" // 預約必看
+                icon: "→",
+                content: "請務必準時到達。若遲到超過 15 分鐘，為不影響下一位客人，我們必須取消您的服務項目並不退還定金。", 
+                category: "must-read" 
             },
             {
-                title: "服務前注意事項", 
-                icon: "→", // EMOJI 替換為箭頭
-                content: "請勿帶妝前來。", 
+                title: "付款方式",
+                icon: "→",
+                content: "現金、匯款、LINE PAY、無卡分期",
                 category: "must-read"
             },
-            {
-                title: "過敏與特殊體質告知",
-                icon: "→", // EMOJI 替換為箭頭
-                content: "若您有任何皮膚過敏史、懷孕、或正在服用特定藥物，請務必在服務開始前告知我們，以便調整產品和流程，確保您的安全。",
-                category: "must-read"
-            },
-            
-            // --- 睫毛管理 (Lash Care) 內容 START ---
-            {
-                title: "睫毛管理價格表", 
-                icon: "→", // EMOJI 替換為箭頭
-                content: "- 睫毛管理: $1,300\n- 濃黑: $300\n- NuNu養護膏: $1,500", 
-                category: "lash-care"
-            },
-            {
-                title: "睫毛生長期", // <-- 新增項目
-                icon: "→", 
-                content: "睫毛生長週期約為 28 至 90 天，會經歷生長期、退化期和休止期。嫁接的睫毛會隨著自然脫落的毛髮一同代謝，因此定期修補是必要的。", 
-                category: "lash-care" 
-            },
-            {
-                title: "睫毛管理注意事項", // <-- 標題已更新
-                icon: "→", // EMOJI 替換為箭頭
-                content: "剛完成睫毛管理後，48小時內應避免碰水、高溫蒸氣或油性產品，以確保產品效果持久。日常清潔請使用專門的清潔產品，並避開油性卸妝液。",
-                category: "lash-care" // 睫毛管理
-            },
-            // --- 睫毛管理 (Lash Care) 內容 END ---
-            
-            // --- 水光粉嫩唇 (Lip Blush) 內容 START ---
             {
                 title: "水光粉嫩唇是什麼", 
-                icon: "→", // 已移除 emoji，使用箭頭與其他項目保持一致
-                content: "水光粉嫩唇有別於一般的霧唇紋繡技術，我們最新的水光粉嫩唇技術沒有使用針具無侵入式行為所以無需敷麻藥\n無傷口/不會疼痛/沒有修護期\n不含酸類/無使用色乳\n水光粉嫩唇是使用高效保濕+抗氧化幫助黑色素代謝，並抑制延緩黑色素生成", // 內容已更新
+                icon: "→",
+                content: "水光粉嫩唇是透過高效保濕+抗氧化去幫助黑色素代謝，安全且無痛。烏唇、三高、蟹足腫都可以操作。",
                 category: "lip-blush"
             },
             {
                 title: "水光粉嫩唇價格表", 
-                icon: "→", // EMOJI 替換為箭頭
-                content: "所有價格皆贈送 NuNu 養護膏 (價值 $2,580)。\n\n- 施作一次: $8,000\n- 施作兩次: $14,000", 
-                category: "lip-blush"
-            },
-            // --- 水光粉嫩唇 (Lip Blush) 內容 END ---
-
-            {
-                title: "水光粉嫩唇與傳統紋繡的差別", 
-                icon: "→", // EMOJI 替換為箭頭
-                content: "水光粉嫩唇使用奈米級色乳，僅作用於淺層表皮，效果自然像唇彩。傳統紋繡顏色飽和且深，較易產生色塊或不均，且多數會隨時間變成藍紫色。", 
-                category: "lip-blush" // 水光粉嫩唇
-            },
-
-            {
-                title: "水光粉嫩唇術後照護", 
-                icon: "→", // EMOJI 替換為箭頭
-                content: "術後需保持唇部乾燥，避免辛辣食物。可薄塗修復軟膏，並注意保濕，切勿自行剝除結痂。",
+                icon: "→",
+                content: "所有價格皆贈送養護唇霜 (價值 $2,980)。\n- 施作一次: $6,000\n- 施作兩次: $10,800", 
                 category: "lip-blush"
             },
             {
-                title: "修改或重做的政策",
-                icon: "→", // EMOJI 替換為箭頭
-                content: "若您對服務結果有任何疑問或不滿意，請在服務完成後 7 日內與我們聯繫，我們將評估狀況並討論免費修改或重做的可能性。",
-                category: "policy" // 其他服務 (政策類)
+                title: "操作前注意事項", 
+                icon: "→",
+                content: "<div class='mt-2 rounded-lg overflow-hidden border border-main-bg/30'><img src='https://raw.githubusercontent.com/theweiyubeauty-eng/aesthetics-notes/main/%E7%B2%89%E5%AB%A9%E5%94%87%E6%93%8D%E4%BD%9C%E5%89%8D%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85.png' alt='粉嫩唇操作前注意事項說明圖' class='w-full h-auto'></div>",
+                category: "lip-blush"
+            },
+            {
+                title: "水光粉嫩唇保養", 
+                icon: "→",
+                content: "<div class='mt-2 rounded-lg overflow-hidden border border-main-bg/30'><img src='https://raw.githubusercontent.com/theweiyubeauty-eng/aesthetics-notes/main/%E7%B2%89%E5%AB%A9%E5%94%87%E4%BF%9D%E9%A4%8A%E6%96%B9%E5%BC%8F.png' alt='粉嫩唇保養方式說明圖' class='w-full h-auto'></div>",
+                category: "lip-blush"
+            },
+            {
+                title: "與傳統紋繡的差別", 
+                icon: "→",
+                content: "傳統紋繡有傷口與恢復期；水光粉嫩唇為無創技術，無恢復期且無疼痛感。", 
+                category: "lip-blush"
+            },
+            {
+                title: "模特招募",
+                icon: "→", 
+                content: "為提升技術及作品拍攝需求，現正招募睫毛管理服務模特。請私訊 IG 或 LINE 了解詳細條件及報名方式。",
+                category: "lash-care"
+            },
+            {
+                title: "睫毛管理價格表", 
+                icon: "→",
+                content: "NUNU韓式睫毛管理$1400", 
+                category: "lash-care"
+            },
+            {
+                title: "睫毛生長期",
+                icon: "→", 
+                content: "睫毛生長週期約為 28 至 90 天，會經歷生長期、退化期和休止期。因此建議一個月整理一次最佳。", 
+                category: "lash-care" 
+            },
+            {
+                title: "睫毛管理注意事項",
+                icon: "→",
+                content: "剛完成睫毛管理後，4個小時內應避免碰水，以確保效果持久。日常清潔可以正常使用油性卸妝液。",
+                category: "lash-care"
             }
         ];
 
         const notesList = document.getElementById('notes-list');
         const tabButtons = document.querySelectorAll('.tab-btn');
-
-        // 當前選中的分頁
+        const beauty24hLinks = document.getElementById('beauty24h-links');
         let currentCategory = 'must-read';
 
-        /**
-         * 渲染注意事項清單 (根據當前選中的 category 篩選)
-         */
         function renderNotes() {
-            // 清空舊的清單內容
             notesList.innerHTML = ''; 
-
-            // 篩選出符合當前 category 的項目
-            const filteredNotes = notesData.filter(note => note.category === currentCategory || note.category === 'general');
+            const filteredNotes = notesData.filter(note => note.category === currentCategory);
             
-            // 如果篩選結果為空，顯示提示
             if (filteredNotes.length === 0) {
-                 notesList.innerHTML = `
-                    <div class="text-center p-8 text-main-text/70">
-                        <p class="mb-2 text-3xl">ℹ️</p>
-                        <p class="font-semibold">此分頁目前無相關注意事項。</p>
-                        <p class="text-sm mt-1">請切換至其他分頁或等待內容更新。</p>
-                    </div>
-                `;
+                 notesList.innerHTML = `<div class="text-center p-8 text-main-text/70"><p>目前無相關資訊。</p></div>`;
                 return;
             }
 
-            // 渲染篩選後的項目
             filteredNotes.forEach((note, index) => {
-                // 建立清單項目容器
                 const item = document.createElement('div');
-                item.className = 'py-3 cursor-pointer hover:bg-main-bg transition duration-150 ease-in-out'; // 使用主色作為 Hover 背景
-                item.setAttribute('data-index', index);
-
-                // 建立標題列 (可點擊部分)
+                item.className = 'py-3 cursor-pointer hover:bg-main-bg/50 transition duration-150';
+                
                 const header = document.createElement('div');
                 header.className = 'flex items-center justify-between p-2';
                 header.onclick = () => toggleContent(item);
 
-                // 標題文字與圖標
-                const titleBlock = document.createElement('div');
-                titleBlock.className = 'flex items-center space-x-3';
-                // 將圖標的字體大小從 text-2xl 調整為 text-xl
-                titleBlock.innerHTML = `
-                    <span class="text-xl text-main-text/80">${note.icon}</span> 
-                    <span class="text-base font-semibold text-main-text">${note.title}</span>
+                header.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xl text-main-text/80">${note.icon}</span> 
+                        <span class="text-base font-semibold text-main-text">${note.title}</span>
+                    </div>
+                    <span class="arrow-icon text-main-text/60 transform transition-transform duration-300 text-xl">&#9660;</span>
                 `;
 
-                // 箭頭圖標 (初始朝下，表示收合)
-                const arrowIcon = document.createElement('span');
-                arrowIcon.className = 'arrow-icon text-main-text/60 transform transition-transform duration-300 rotate-0 text-xl'; // 使用新文字色的半透明
-                arrowIcon.innerHTML = '&#9660;'; // 初始向下箭頭 (&#9660; = ▼)
-
-                header.appendChild(titleBlock);
-                header.appendChild(arrowIcon);
-
-                // 建立內容區 (預設隱藏)
                 const contentDiv = document.createElement('div');
-                // 初始 max-height 為 0
                 contentDiv.className = 'content-body overflow-hidden px-4 pt-0'; 
                 contentDiv.style.maxHeight = '0px'; 
-                
-                // *** 核心變更：使用 replace(/\n/g, '<br>') 處理換行，讓價格表能分行顯示 ***
-                const formattedContent = note.content.replace(/\n/g, '<br>');
-
-                contentDiv.innerHTML = `
-                    <p class="text-sm text-main-text/90 border-l-2 border-accent-taupe pl-3 py-1 mt-2">${formattedContent}</p>
-                `; // 內容文字使用主文字色，左側邊框使用次要顏色
+                // 檢查內容是否為圖片 HTML，若是則不進行 br 替換
+                const formattedContent = note.content.includes('<img') ? note.content : note.content.replace(/\n/g, '<br>');
+                contentDiv.innerHTML = `<div class="text-sm text-main-text/90 border-l-2 border-accent-taupe pl-3 py-1 mt-2">${formattedContent}</div>`; 
 
                 item.appendChild(header);
                 item.appendChild(contentDiv);
@@ -277,74 +252,46 @@
             });
         }
 
-        /**
-         * 展開/收合內容
-         * @param {HTMLElement} item - 點擊的清單項目容器
-         */
         function toggleContent(item) {
             const contentDiv = item.querySelector('.content-body');
             const arrowIcon = item.querySelector('.arrow-icon');
-            // 檢查是否已展開（maxHeight > 0）
             const isExpanded = contentDiv.style.maxHeight !== '0px';
 
-            // 關閉所有其他展開的項目
             document.querySelectorAll('.content-body').forEach(body => {
-                if (body !== contentDiv) {
-                    body.style.maxHeight = '0px';
-                    // 確保只找同層的 arrow-icon
-                    const parentItem = body.closest('.py-3');
-                    if (parentItem) {
-                        parentItem.querySelector('.arrow-icon').classList.remove('rotate-180');
-                    }
-                }
+                body.style.maxHeight = '0px';
+                body.closest('.py-3').querySelector('.arrow-icon').classList.remove('rotate-180');
             });
 
-            if (isExpanded) {
-                // 收合
-                contentDiv.style.maxHeight = '0px';
-                contentDiv.classList.remove('pb-4');
-                arrowIcon.classList.remove('rotate-180');
-            } else {
-                // 展開
-                // 計算內容的實際高度，並設置為 maxHeight
-                const contentHeight = contentDiv.scrollHeight;
-                contentDiv.style.maxHeight = contentHeight + 20 + 'px'; // 加上一些緩衝空間
-                contentDiv.classList.add('pb-4'); // 增加底部間距
+            if (!isExpanded) {
+                contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
                 arrowIcon.classList.add('rotate-180');
             }
         }
 
-        /**
-         * 處理分頁按鈕點擊事件
-         */
         function handleTabClick(event) {
             const newCategory = event.target.dataset.tab;
-            if (newCategory === currentCategory) return; // 點擊當前分頁則不做動作
+            if (newCategory === currentCategory) return;
 
-            // 1. 更新按鈕樣式
             tabButtons.forEach(btn => {
-                // 設置非活動狀態樣式
                 btn.classList.remove('bg-main-bg', 'text-main-text', 'font-bold', 'shadow-inner');
-                // 非活動按鈕使用 accent-taupe/80 (現在是淺米色) 和 text-main-text (灰綠色)
                 btn.classList.add('bg-accent-taupe/80', 'text-main-text', 'font-semibold', 'shadow'); 
             });
-            // 設置活動狀態樣式 (使用 main-bg [淺土色])
             event.target.classList.remove('bg-accent-taupe/80', 'text-main-text', 'font-semibold', 'shadow');
             event.target.classList.add('bg-main-bg', 'text-main-text', 'font-bold', 'shadow-inner');
 
-            // 2. 更新內容
             currentCategory = newCategory;
-            renderNotes();
+            if (newCategory === 'beauty24h') {
+                notesList.classList.add('hidden');
+                beauty24hLinks.classList.remove('hidden');
+            } else {
+                beauty24hLinks.classList.add('hidden');
+                notesList.classList.remove('hidden');
+                renderNotes();
+            }
         }
 
-        // 頁面載入完成後初始化
         document.addEventListener('DOMContentLoaded', () => {
-            // 綁定分頁按鈕事件
-            tabButtons.forEach(btn => {
-                btn.addEventListener('click', handleTabClick);
-            });
-
-            // 初始渲染 (預設 'must-read')
+            tabButtons.forEach(btn => btn.addEventListener('click', handleTabClick));
             renderNotes();
         });
     </script>
